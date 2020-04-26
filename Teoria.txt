@@ -60,4 +60,11 @@ Podemos usar proptypes y typescripts (buscar aparte)
 Básicamente, están tipados y sirven para unificar cosas.
 Hacerlo permite pasar más tiempo codeando y menos tiempo arreglando problemas.
 
+Para agregar paths, es necesario aclarar que la root es "exact path={'/'}" Si no lo hacemos, se agrega contenido a las páginas posteriores.
+
+Si definimos un elemento fuera de la Route, se vuelve un elemento persistente. Internamente, el router funciona como un switch. Se fija en la URL del sitio y si coincide con el path especificado para el componente, matchea ese contenido. Lo monta y desmonta según corresponda. Como el elemento está fuera de las condiciones, se verá de manera permanente.
+
+Puedo agregarles links de manera permanente, dentro y fuera de la route. Si agrego los links como elementos persistentes, se monta y desmonta todo a la vez. La idea es que no suceda eso.
+
+
 

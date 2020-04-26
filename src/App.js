@@ -5,8 +5,11 @@ const App = ()  => {
   return (
     <div className="App">
       <Router>
-        <Route path={'/'}>
+        <Route exact path={'/'}>
           <h1>Acá va uno</h1>
+        </Route>
+        <Route path={'/About'}>
+          <h1>Quiénes somos</h1>
         </Route>
       </Router>
     </div>
