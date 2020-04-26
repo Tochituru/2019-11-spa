@@ -66,5 +66,6 @@ Si definimos un elemento fuera de la Route, se vuelve un elemento persistente. I
 
 Puedo agregarles links de manera permanente, dentro y fuera de la route. Si agrego los links como elementos persistentes, se monta y desmonta todo a la vez. La idea es que no suceda eso.
 
+¿Por qué sucede eso? El comportamiento por defecto de a es generar un request en base a una URL. Esta aplicación, gracias a Router, sabe qué contenido mostrar, pero lo hace como si se cargara un sitio nuevo. Ahí pierdo la gracia de SPA, porque tengo que generar el contenido de nuevo de cero. 
 
 
