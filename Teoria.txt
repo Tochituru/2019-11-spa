@@ -1,0 +1,63 @@
+En el proceso que hacemos nosotras, cuando había un cambio en la información, eliminamos todo lo que está en la web y arrancamos de cero el proceso de render.
+
+Con el nivel de aplicaciones que venimos trabajando, no genera problemas, pero lo que propone react es más performante: identificar qué nodos deben instanciarse y volver a renderizarlos.
+
+Cuando abrimos un CRA, el html tiene un punto de entrada (div id="root"), donde react inyecta todo el contenido. Por eso, técnicamente siempre estamos dentro del index html.
+
+Single Page Application = SPA.
+Son sitios web cuyo contenido se genera totalmente dentro de una sola vista. No es lo mismo que las páginas donde todo se mueve hacia abajo.
+La definición exacta:
+    application or website that interacts with the web browser by dynamically rewriting the current web page with new data from the web server, instead of the default method of the browser loading entire new pages.
+
+¿Cuál es el método o la forma de generar elementos visuales dentro de una librería como React? Los componentes. 
+
+Los componentes permiten seccionar y dividir los elementos visuales de nuestro código. Tienen una serie de categorías y divisiones: class y functional, stateful y stateless.
+
+¿Qué es el state? El lugar donde se manipula el comportamiento del componente. El estado es el contenido que posee y en qué momento de su vida se encuentra ese cacho de interfaz que proveo. Y queremos que sea el state que dirija los componentes y la aplicación.
+
+Se modifica con la interacción del usuario, que va a modificar al componente y cómo se manifiesta. No obstante, tiene que ser inmutable.
+
+¿Qué pasa con la inmutabilidad? El estado no debe transformarse por los efectos colaterales (side effects), cuando modificamos nuestro estado, el que gobierna la aplicación desde un lugar no esperado, podemos obtener resultados no esperados. Y queremos que nuestra aplicación sea coherente.
+
+La inmutabilidad plantea una manera en la que modificamos nuestro estado de una sola forma segura y esa modificación en realidad permite tomar una copia del estado actual, le agregamos la información, los intanciamos neuvamente como estado principal y todo elemento que esté suscrito, escuchando el estado, debe actualizarse. Así funciona el setState.
+
+Es superimportante tener en cuenta la inmutabilidad del estado.
+
+¿Cuál es la diferencia entre class componentes y functional?
+- Tienen una sintaxis distinta porque pertenecen a clases de datos distintos que se definen de formas distintas.
+- El class componentes es una clase, una estructura más compleja, que adquiere ciertas propiedades, que viene de la POO, x ej., tienen polimorfismo, herencia y justo en el caso de react y puede extender (heredar) ciertos métodos, como el método que maneja el cambio del estado o del life-cycle. La única forma que antes tenía un componentes de manejar todas esas cosas era que fuera del tipo clase y extendiese el comportamiento principal del componente de react.
+Después, react literalmente hackeó su propia librería, tomó sus métodos definidos dentro de class component y los extrajo para poder usarlos fuera del contexto de una clase, a través de los tantos hooks que existen.
+
+A nivel de rendimiento, es distinto entre ambos. Cada uno tiene sus mejoras en ciertos aspectos. 
+
+El problema de las clases es que su sintaxis es más extensa, más compleja, tiene un montón de cosas que levantar que quizás no usamos, extender un montón de propiedades.
+
+Es superimportante adherirse al concepto de componentización. La inmutabilidad también debe ser principio, pero el manejo de los estados puede llegar a cambiar de proyecto a proyecto.
+
+¿Qué es el routing? Es un mapa de redirección: le aclara a la aplicación qué sucede cuando buscás una dirección específica.
+Hay distintas herramientas de routing, no siempre es lo mismo. Desafortunadamente, no es nativo de react, sino de una librería externa (que también la provee). 
+
+¿Qué son las props? Es cómo llamamos a los parámetros en el contexto de los componentes. Los class components reciben props, especialmente cuando se trabaja con un router.
+Las props son la forma en que podemos compartir parte de un estado entre componentes anidados. Cuando queremos que un estado o parte de ese estado entre distintos componentes, compartimos esas props.
+
+Tema de 11-5 a Routing/Single Page Application
+
+Carpeta containers (representan una vista completa que envuelven otros componentes)
+Carpeta componentes
+
+Instalamos React rounter dom
+$ npm install --save react-router-dom
+Nos da una serie de componentes con los cuales voy a manejar las rutas existentes para mi app.
+
+Desde react-router-dom importamos varias cosas:
+
+BrowserRouter as Router y Route.
+Se van a colocar como tags html, pero con mayúscula.
+Route va a tener primero un path (a qué url va a acceder para mostrar contenido).
+Hay varias formas de hacerlo, como todavía no sabemos lo extenso que va a ser el contenido, lo ponemos como hijo de Router.
+
+Podemos usar proptypes y typescripts (buscar aparte)
+Básicamente, están tipados y sirven para unificar cosas.
+Hacerlo permite pasar más tiempo codeando y menos tiempo arreglando problemas.
+
+
