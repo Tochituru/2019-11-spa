@@ -94,3 +94,8 @@ También queremos que vaya con datos específicos, para lo cual agregamos datos 
 Si yo, dentro de un class componentes, no voy a usar un useState, sino que voy a usar el setState. Para la propiedad useHistory, usaré las props propias de componente.
 Si yo hago un this.props, me aparece en consola un objeto. Este componente, por el simple hecho de estar dentro del react-router-dom, está recibiendo propiedades de la navegación. Una de las cosas que hace react-router-dom es tomar esa api propia del browser que controla adonde estás, adonde vienes etc y se las da a los elementos.
 Este componente class, por solo estar dentro del router, recibe eso. Tiene props. Si estuviera fuera, no tendrá ninguna prop.
+
+
+Manejar un estado unificado dentro de diversas páginas. Administrarlo a través de AppRouter.
+Para eso, podemos manejar la dupla useState desde ahí (y cargarle datitos).
+
