@@ -71,3 +71,9 @@ Puedo agregarles links de manera permanente, dentro y fuera de la route. Si agre
 Para solucionar esto, expongo otro elemento, que se llama Link.
 
 Cambio el elemento A a link, y la prop de href a to para que solucione. ahora solo se refresca el contenido que cambia. Este es el conciliador de react que actualiza solo lo que debe actualizarse.
+
+Supongamos que va creciendo y no me interesa que sea tan extensa.
+Por eso, voy a crear componentes para cada elemento (en containers porque seran las vistas finales).
+Con Route ahora puedo definir qué componente voy a mirar y, en vez de que sea un hijo, será directamente la propiedad.
+
+Hacemos lo mismo con el about. Sin embargo, para pasarle props al componente, tengo que pasarlo como hijo.
