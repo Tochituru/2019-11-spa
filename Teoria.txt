@@ -68,4 +68,6 @@ Puedo agregarles links de manera permanente, dentro y fuera de la route. Si agre
 
 ¿Por qué sucede eso? El comportamiento por defecto de a es generar un request en base a una URL. Esta aplicación, gracias a Router, sabe qué contenido mostrar, pero lo hace como si se cargara un sitio nuevo. Ahí pierdo la gracia de SPA, porque tengo que generar el contenido de nuevo de cero. 
 
+Para solucionar esto, expongo otro elemento, que se llama Link.
 
+Cambio el elemento A a link, y la prop de href a to para que solucione. ahora solo se refresca el contenido que cambia. Este es el conciliador de react que actualiza solo lo que debe actualizarse.
