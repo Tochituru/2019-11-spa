@@ -99,3 +99,6 @@ Este componente class, por solo estar dentro del router, recibe eso. Tiene props
 Manejar un estado unificado dentro de diversas páginas. Administrarlo a través de AppRouter.
 Para eso, podemos manejar la dupla useState desde ahí (y cargarle datitos).
 
+Ejemplo: ir a la página y en la url solo viaja a una id en particular.
+Dentro del API que Javascript le pone al navegador, hay algo que se llama getURLparameters. 
+Ver lo de useEffect
