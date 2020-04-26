@@ -71,9 +71,26 @@ Puedo agregarles links de manera permanente, dentro y fuera de la route. Si agre
 Para solucionar esto, expongo otro elemento, que se llama Link.
 
 Cambio el elemento A a link, y la prop de href a to para que solucione. ahora solo se refresca el contenido que cambia. Este es el conciliador de react que actualiza solo lo que debe actualizarse.
+El componente Link siempre tiene que estar dentro de Router.
 
 Supongamos que va creciendo y no me interesa que sea tan extensa.
 Por eso, voy a crear componentes para cada elemento (en containers porque seran las vistas finales).
 Con Route ahora puedo definir qué componente voy a mirar y, en vez de que sea un hijo, será directamente la propiedad.
 
 Hacemos lo mismo con el about. Sin embargo, para pasarle props al componente, tengo que pasarlo como hijo.
+
+Si tengo un componente que es NavBar, lo enchufo dentro del Router. Para usar los links dentro de ese componente, tendré que poder importarlos.
+
+Quiero resolver la programación de navegación de manera programática (con una función). Por ejemplo, tengo un botón que va a ser el submit de un formulario, que me valide y después me lleve automáticamente a la página About.
+
+Para esto tenemos un Hooks expuesto automáticamente en router-dom, que se llama useHistory. Esto me permite manejar la navegación. Su método principal es push. Si le pongo history.goBack, me lleva atrás.
+
+El error principal de useHistory parece estar en que se tiene que usar de manera externa al router, dentro de otro componente.
+
+La gran mayoría de los casos vamos a redireccionar por funciones, para que pueda hacer fetch, respuesta, then y catch (errores).
+
+También queremos que vaya con datos específicos, para lo cual agregamos datos específicos.
+
+Si yo, dentro de un class componentes, no voy a usar un useState, sino que voy a usar el setState. Para la propiedad useHistory, usaré las props propias de componente.
+Si yo hago un this.props, me aparece en consola un objeto. Este componente, por el simple hecho de estar dentro del react-router-dom, está recibiendo propiedades de la navegación. Una de las cosas que hace react-router-dom es tomar esa api propia del browser que controla adonde estás, adonde vienes etc y se las da a los elementos.
+Este componente class, por solo estar dentro del router, recibe eso. Tiene props. Si estuviera fuera, no tendrá ninguna prop.
